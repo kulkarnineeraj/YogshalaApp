@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAF9F6"
+    tools:context=".activity.MainActivity">
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+
+                android:text="Sahyadri Iyengar Yogshala"
+                android:textColor="@color/darker_blue"
+                android:textSize="26sp"
+
+                />
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/banner_bg">
+
+                <TextView
+                    android:id="@+id/textViewSaving"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:textAlignment="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+
+                    android:text="Student Count"
+                    android:textColor="@color/darker_blue"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TableLayout
+                    android:id="@+id/table"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewSaving"
+                    android:layout_marginTop="10dp"
+
+                    android:paddingHorizontal="10dp"
+
+                    >
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Total"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Joined"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Left"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/totalTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="0"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+
+                        <TextView
+                            android:id="@+id/joinedTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="0"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/leftTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="0"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+                </TableLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/feesDueRL"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/banner_bg">
+
+                <TextView
+                    android:id="@+id/ActiveDueFees"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Fees Due"
+                    android:textColor="@color/darker_blue"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TableLayout
+                    android:id="@+id/tableduefees"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ActiveDueFees"
+                    android:layout_marginTop="10dp"
+                    android:paddingHorizontal="10dp">
+
+                    <!-- First Row with three columns -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Medical"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Offline"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Online"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <!-- Second Row with sub-columns -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Active"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Due"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Active"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Due"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Active"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Due"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <!-- Third Row with TextViews for data -->
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/activeMedicalTv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="0"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/dueMedicalTv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="0"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/activeNormalTv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="0"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/dueNormalTv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="0"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/activeOnlineTv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="0"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/dueOnlineTv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/borders"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="0"
+                            android:textColor="@color/darker_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </TableRow>
+                </TableLayout>
+            </RelativeLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="26dp"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/CL1"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+
+                    android:layout_weight="0.3333"
+                    android:background="@drawable/light_purple_background"
+                    android:elevation="2dp"
+
+                    >
+
+
+                    <ImageView
+                        android:id="@+id/imageViewBtn1"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.29000002"
+                        app:srcCompat="@drawable/add_icon"
+                        app:tint="@color/darker_blue" />
+
+                    <TextView
+                        android:id="@+id/tvAddEnquiry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:text="Add Client"
+                        android:textColor="@color/darker_blue"
+                        android:textSize="17sp"
+
+                        app:layout_constraintEnd_toEndOf="@id/imageViewBtn1"
+                        app:layout_constraintStart_toStartOf="@id/imageViewBtn1"
+                        app:layout_constraintTop_toBottomOf="@id/imageViewBtn1"
+
+
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/CL2"
+                    android:layout_width="0dp"
+
+                    android:layout_height="100dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="0.3333"
+                    android:background="@drawable/light_purple_background"
+                    android:elevation="2dp"
+
+                    >
+
+
+                    <ImageView
+                        android:id="@+id/imageViewBtn2"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.29000002"
+                        app:srcCompat="@drawable/programicon"
+                        app:tint="@color/darker_blue" />
+
+                    <TextView
+                        android:id="@+id/tv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:text="Programs"
+                        android:textColor="@color/darker_blue"
+                        android:textSize="17sp"
+
+                        app:layout_constraintEnd_toEndOf="@id/imageViewBtn2"
+                        app:layout_constraintStart_toStartOf="@id/imageViewBtn2"
+                        app:layout_constraintTop_toBottomOf="@id/imageViewBtn2"
+
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/CL3"
+                    android:layout_width="0dp"
+
+                    android:layout_height="100dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="0.3333"
+                    android:background="@drawable/light_purple_background"
+                    android:elevation="2dp"
+
+                    >
+
+
+                    <ImageView
+                        android:id="@+id/imageViewBtn3"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.29000002"
+                        app:srcCompat="@drawable/bottom_btn4"
+                        app:tint="@color/darker_blue" />
+
+                    <TextView
+                        android:id="@+id/tvaddArea"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:text="All Fees"
+                        android:textColor="@color/darker_blue"
+                        android:textSize="17sp"
+
+                        app:layout_constraintEnd_toEndOf="@id/imageViewBtn3"
+                        app:layout_constraintStart_toStartOf="@id/imageViewBtn3"
+                        app:layout_constraintTop_toBottomOf="@id/imageViewBtn3"
+
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="26dp"
+
+                android:orientation="horizontal"
+
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/CL4"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+
+                    android:layout_weight="0.3333"
+                    android:background="@drawable/light_purple_background"
+                    android:elevation="2dp"
+
+                    >
+
+
+                    <ImageView
+                        android:id="@+id/imageViewBtn4"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.29000002"
+                        app:srcCompat="@drawable/bottom_btn3"
+                        app:tint="@color/darker_blue" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:text="Client List"
+                        android:textColor="@color/darker_blue"
+                        android:textSize="17sp"
+
+                        app:layout_constraintEnd_toEndOf="@id/imageViewBtn4"
+                        app:layout_constraintStart_toStartOf="@id/imageViewBtn4"
+                        app:layout_constraintTop_toBottomOf="@id/imageViewBtn4"
+
+
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/CL5"
+                    android:layout_width="0dp"
+
+                    android:layout_height="100dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="0.3333"
+                    android:background="@drawable/light_purple_background"
+                    android:elevation="2dp"
+
+                    >
+
+
+                    <ImageView
+                        android:id="@+id/imageViewBtn5"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.29000002"
+                        app:srcCompat="@drawable/bottom_btn2"
+                        app:tint="@color/darker_blue" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:text="Add Fees"
+                        android:textColor="@color/darker_blue"
+                        android:textSize="17sp"
+
+                        app:layout_constraintEnd_toEndOf="@id/imageViewBtn5"
+                        app:layout_constraintStart_toStartOf="@id/imageViewBtn5"
+                        app:layout_constraintTop_toBottomOf="@id/imageViewBtn5"
+
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/CL6"
+                    android:layout_width="0dp"
+
+                    android:layout_height="100dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="0.3333"
+                    android:background="@drawable/light_purple_background"
+                    android:elevation="2dp"
+
+                    >
+
+
+                    <ImageView
+                        android:id="@+id/imageViewBtn6"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.29000002"
+                        app:srcCompat="@drawable/reportsbtn"
+                        app:tint="@color/darker_blue" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:text="Fees Due"
+                        android:textColor="@color/darker_blue"
+                        android:textSize="17sp"
+
+                        app:layout_constraintEnd_toEndOf="@id/imageViewBtn6"
+                        app:layout_constraintStart_toStartOf="@id/imageViewBtn6"
+                        app:layout_constraintTop_toBottomOf="@id/imageViewBtn6"
+
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

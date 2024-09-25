@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "624548589407",
+    "firebase_url": "https://yogshala-app-default-rtdb.firebaseio.com",
+    "project_id": "yogshala-app",
+    "storage_bucket": "yogshala-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624548589407:android:49246da4ebfcb5371850ea",
+        "android_client_info": {
+          "package_name": "com.example.yogshala"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKiFL0wfU5crtgKP9-HYunhQN1ZyiIs-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

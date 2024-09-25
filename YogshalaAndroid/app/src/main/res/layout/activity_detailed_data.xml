@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue"
+    tools:context=".activity.DetailedDataActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+
+
+                android:background="@color/dark_blue"
+
+                >
+
+                <ImageView
+                    android:id="@+id/backBtn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="4dp"
+                    app:tint="@color/white"
+                    app:srcCompat="@drawable/back"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/menuBtn"
+                    android:layout_width="30dp"
+                    android:layout_height="25dp"
+                    app:srcCompat="@drawable/more"
+                    app:tint="@color/white"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Detailed Info"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+
+
+
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="26dp"
+
+                >
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="64dp"
+                    android:background="@drawable/top_corner_white_bg"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <TextView
+                        android:id="@+id/tvName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="52dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Rohan Kudale"
+                        android:textAlignment="center"
+                        android:textColor="@color/darker_blue"
+                        android:textSize="20sp"
+
+                        android:textStyle="bold" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="horizontal"
+
+                        >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/light_purple_background"
+                            android:elevation="4dp">
+
+                            <ImageView
+                                android:id="@+id/ivEnquiryDate"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="8dp"
+                                android:padding="8dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/date_icon"
+                                app:tint="@color/dark_blue" />
+
+                            <TextView
+                                android:id="@+id/tvEnquiry"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="Joining Date"
+
+                                android:textColor="@color/black"
+                                app:layout_constraintStart_toEndOf="@+id/ivEnquiryDate"
+                                app:layout_constraintTop_toTopOf="@id/ivEnquiryDate" />
+
+                            <TextView
+                                android:id="@+id/tvEnquiryDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="21/10/2024"
+                                android:textColor="@color/darker_blue"
+
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/ivEnquiryDate"
+                                app:layout_constraintStart_toStartOf="@+id/tvEnquiry" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/light_purple_background"
+                            android:elevation="4dp">
+
+                            <ImageView
+                                android:id="@+id/ivAmount"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="8dp"
+                                android:padding="8dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/job_type"
+                                app:tint="@color/dark_blue" />
+
+                            <TextView
+                                android:id="@+id/tvAmount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="Fees"
+
+                                android:textColor="@color/black"
+                                app:layout_constraintStart_toEndOf="@+id/ivAmount"
+                                app:layout_constraintTop_toTopOf="@id/ivAmount" />
+
+                            <TextView
+                                android:id="@+id/tvAmountDetail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs."
+                                android:textColor="@color/darker_blue"
+
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/ivAmount"
+                                app:layout_constraintStart_toStartOf="@+id/tvAmount" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="horizontal"
+
+                        >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/light_purple_background"
+                            android:elevation="4dp">
+
+                            <ImageView
+                                android:id="@+id/ivBirthDate"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="8dp"
+                                android:padding="8dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/birthdateicon"
+                                app:tint="@color/dark_blue" />
+
+                            <TextView
+                                android:id="@+id/tvBirthDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="BirthDate"
+
+                                android:textColor="@color/black"
+                                app:layout_constraintStart_toEndOf="@+id/ivBirthDate"
+                                app:layout_constraintTop_toTopOf="@id/ivBirthDate" />
+
+                            <TextView
+                                android:id="@+id/tvBirthDate2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Joined"
+                                android:textColor="@color/darker_blue"
+
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/ivBirthDate"
+                                app:layout_constraintStart_toStartOf="@+id/tvBirthDate" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/light_purple_background"
+                            android:elevation="4dp">
+
+                            <ImageView
+                                android:id="@+id/ivStatus"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="8dp"
+                                android:padding="8dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/level"
+                                app:tint="@color/dark_blue" />
+
+                            <TextView
+                                android:id="@+id/tvStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="Status"
+
+                                android:textColor="@color/black"
+                                app:layout_constraintStart_toEndOf="@+id/ivStatus"
+                                app:layout_constraintTop_toTopOf="@id/ivStatus" />
+
+                            <TextView
+                                android:id="@+id/tvStatus2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cold"
+                                android:textColor="@color/darker_blue"
+
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/ivStatus"
+                                app:layout_constraintStart_toStartOf="@+id/tvStatus" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/light_purple_background"
+                        android:elevation="4dp"
+                        android:orientation="vertical"
+
+                        >
+
+
+                        <TextView
+                            android:id="@+id/tvMoreDetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:text="Contact Details"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+
+
+                            android:textSize="20sp" />
+
+                        <View
+                            android:id="@+id/viewLine"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@color/dark_blue"
+                            app:layout_constraintBottom_toBottomOf="@+id/tvMoreDetails" />
+
+
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/ivProgram"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+
+                                android:padding="8dp"
+                                app:srcCompat="@drawable/job_type"
+                                app:tint="@color/dark_blue" />
+
+                            <TextView
+                                android:id="@+id/tvProgram"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_toEndOf="@id/ivProgram"
+                                android:text="Program"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/tvProgramDetail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvProgram"
+                                android:layout_alignStart="@id/tvProgram"
+                                android:text="Football"
+                                android:textColor="@color/darker_blue"
+
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/ivMobile"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+
+                                android:padding="8dp"
+                                app:srcCompat="@drawable/phoneicon"
+                                app:tint="@color/dark_blue" />
+
+                            <TextView
+                                android:id="@+id/tvMobile"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_toEndOf="@id/ivMobile"
+                                android:text="Mobile Number"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/tvMobile2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvMobile"
+                                android:layout_alignStart="@id/tvMobile"
+                                android:text="8379902131"
+                                android:textColor="@color/darker_blue"
+
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/ivEmail"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+
+                                android:padding="8dp"
+                                app:srcCompat="@drawable/emailicon"
+                                app:tint="@color/dark_blue" />
+
+                            <TextView
+                                android:id="@+id/tvEmail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_toEndOf="@id/ivEmail"
+                                android:text="Email"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/tvEmail2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvEmail"
+                                android:layout_alignStart="@id/tvEmail"
+                                android:text="abc@gmail.com"
+                                android:textColor="@color/darker_blue"
+
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/ivAddress"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+
+                                android:padding="8dp"
+                                app:srcCompat="@drawable/addressicon"
+                                app:tint="@color/dark_blue" />
+
+                            <TextView
+                                android:id="@+id/tvAddress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_toEndOf="@id/ivAddress"
+                                android:text="Address"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/tvAddress2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvAddress"
+                                android:layout_alignStart="@id/tvAddress"
+                                android:text="Hadapsar, Pune 411028"
+                                android:textColor="@color/darker_blue"
+
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/linearLayout2"
+                    app:srcCompat="@drawable/yogshalaicon"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

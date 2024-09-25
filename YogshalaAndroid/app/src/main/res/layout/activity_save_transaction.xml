@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SaveTransactionActivity">
+
+    <!-- ScrollView to enable scrolling if content exceeds screen height -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- LinearLayout as a container for vertical stacking of views -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header ConstraintLayout with a back button and title text -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@color/dark_blue">
+
+                <!-- Back button ImageView -->
+                <ImageView
+                    android:id="@+id/backBtn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="4dp"
+                    app:tint="@color/white"
+                    app:srcCompat="@drawable/back"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <!-- Title TextView -->
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save Transaction"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Client Name Input -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <!-- TextInputLayout for client name -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginTop="8dp"
+                    android:hint="Client Name">
+
+                    <!-- TextInputEditText for client name input -->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etName"
+                        android:inputType="textCapSentences"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:textSize="14sp"
+                        android:padding="8dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- From Date Input -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <!-- TextInputLayout for from date -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginTop="8dp"
+                    android:hint="From Date">
+
+                    <!-- TextInputEditText for from date input -->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etFromDate"
+                        android:inputType="date"
+                        android:focusable="false"
+                        android:clickable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:padding="8dp"
+                        android:textSize="14sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- To Date Input -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <!-- TextInputLayout for to date -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginTop="8dp"
+                    android:hint="To Date">
+
+                    <!-- TextInputEditText for to date input -->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etToDate"
+                        android:inputType="date"
+                        android:focusable="false"
+                        android:clickable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:padding="8dp"
+                        android:textSize="14sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- Transaction Type Input -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <!-- TextInputLayout for transaction type -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_marginTop="8dp"
+                    android:hint="Type">
+
+                    <!-- AutoCompleteTextView for selecting transaction type -->
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteType"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:padding="8dp"
+                        android:textSize="14sp"
+                        android:inputType="none"
+                        android:focusable="false"
+                        android:clickable="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- Monthly Fees Input -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <!-- TextInputLayout for monthly fees -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginTop="8dp"
+                    android:hint="Monthly Fees">
+
+                    <!-- TextInputEditText for monthly fees input -->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etMonthFee"
+                        android:inputType="number"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:padding="8dp"
+                        android:textSize="14sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- Received Amount Input -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <!-- TextInputLayout for received amount -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginTop="8dp"
+                    android:hint="Received Amount">
+
+                    <!-- TextInputEditText for received amount input -->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etReceivedAmount"
+                        android:inputType="number"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:padding="8dp"
+                        android:textSize="14sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical">
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+
+                android:orientation="horizontal">
+                <RadioButton android:id="@+id/rbOnline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:text="Online"/>
+                <RadioButton android:id="@+id/rbCash"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Cash"
+                    android:layout_height="50dp"
+                    android:padding="8dp"
+                    android:textSize="14sp"/>
+            </RadioGroup>
+        </LinearLayout>
+            <!--Program-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <!-- TextInputLayout for Program type -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_marginTop="8dp"
+                    android:hint="Program">
+
+                    <!-- AutoCompleteTextView for selecting Program type -->
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteProgram"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:padding="8dp"
+                        android:textSize="14sp"
+                        android:inputType="none"
+                        android:focusable="false"
+                        android:clickable="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- Remarks Input -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <!-- TextInputLayout for remarks -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginTop="8dp"
+                    android:hint="Remarks">
+
+                    <!-- TextInputEditText for remarks input -->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRemarks"
+                        android:inputType="textCapSentences"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:padding="8dp"
+                        android:textSize="14sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- Button layout with Reset and Save buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="16dp">
+
+                <!-- Reset Button -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnReset"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:elevation="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/buttonbackground"
+                    style="@android:style/Widget.Button"
+                    android:backgroundTint="#BDBDBD"
+                    android:gravity="center"
+                    android:layout_margin="16dp"
+                    android:textSize="22sp"
+                    android:text="Reset"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <!-- Save Button -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:elevation="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/buttonbackground"
+                    style="@android:style/Widget.Button"
+                    android:gravity="center"
+                    android:layout_margin="16dp"
+                    android:textSize="22sp"
+                    android:text="Save "
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

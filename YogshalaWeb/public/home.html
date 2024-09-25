@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+<title>Registration Form</title>
+<meta content="" name="description">
+<meta content="" name="keywords">
+<link rel="stylesheet" type="text/css" href="style.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+<script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyB-Tw8y41IsxhLu1COqxujlUHcBVYL7aMg",
+    authDomain: "yogshala-app.firebaseapp.com",
+    databaseURL: "https://yogshala-app-default-rtdb.firebaseio.com",
+    projectId: "yogshala-app",
+    storageBucket: "yogshala-app.appspot.com",
+    messagingSenderId: "624548589407",
+    appId: "1:624548589407:web:ce4a3fceeb335bb31850ea",
+    measurementId: "G-PP2JMR3X4N"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Function to save data to Firebase
+        function saveClientData() {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const date = document.getElementById('date').value;
+            
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+           
+            const birthDate = document.getElementById('birthDate').value;  <!-- Corrected ID -->
+            const phone = document.getElementById('phone').value;
+            const program = document.getElementById('program').value;
+            
+            const status = document.getElementById('status').value;
+            
+            
+            // Validation (ensure required fields are filled)
+            if (firstName === "" || lastName === "" ||  phone === "" || program === "") {
+                alert("Please fill all required fields");
+                return;
+            }
+            
+            // Hide the submit button
+            document.getElementById('submitButton').style.display = 'none';
+
+            // Generate unique ID
+            const clientId = firebase.database().ref('client').push().key;  
+
+            // Client data object (same structure as your Android app)
+            const client = {
+                id: clientId,
+                firstName: firstName,
+                lastName: lastName,
+                date: date,  // Date is already in yyyy-mm-dd format
+               
+                email: email,
+                address: address,
+                
+                birthDate: birthDate,
+                phone: phone,
+                program: program,
+                
+                status: status,
+                
+                
+            };
+
+            // Save to Firebase Database
+            firebase.database().ref('client/' + clientId).set(client, (error) => {
+                if (error) {
+                    alert("Failed to save client data: " + error.message);
+                    // Show the button after the function logic is done
+                    document.getElementById('submitButton').style.display = 'block';
+                } else {
+                    
+                    
+                    // Redirect to another page
+                    window.location.href = 'submitpopup.html';
+                }
+            });
+        }
+    </script>
+    <script>window.onload = function() {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = ('0' + (today.getMonth() + 1)).slice(-2); // Adding leading zero if needed
+        const day = ('0' + today.getDate()).slice(-2); // Adding leading zero if needed
+        
+        const formattedDate = `${year}-${month}-${day}`;
+        document.getElementById('date').value = formattedDate; // Set the value of input type="date"
+    };</script>
+</head>
+<body>
+
+    
+    <div class="form">
+        
+        <div class="title-div">
+            
+            <img src="appicon.png" alt="Success">
+            <p class="whitebg"><em>Nourish your body. Nurture your soul!!</em></p>
+            
+        </div>
+
+        <!-- First and Last Name -->
+        <div class="name-div">
+            <p class="required" style="text-align: center;">* Marked fields are mandatory to fill </p>
+            <div class="input-container">
+                
+                <div class="input-div">
+                    <label>First Name <span class="required">*</span></label>
+                    <input type="text" id="firstName" class="form-control" placeholder="Enter Firstname" required>
+                </div>
+                <div class="input-div">
+                    <label>Last Name <span class="required">*</span></label>
+                    <input type="text" id="lastName" class="form-control" placeholder="Enter Lastname"  required>
+                </div>
+            </div>
+        </div>
+
+        <!-- Date and Program -->
+        <div class="date-div">
+            <div class="input-container">
+                <div class="input-div">
+                    <label>Date <span class="required">*</span></label>
+                    <input type="date" class="form-control" id="date" required>
+                </div>
+                <div class="input-div">
+                    <label>Program<span class="required">*</span></label>
+                    
+  <select class="form-control" name="program" id="program">
+    <option value="Medical">Medical</option>
+    <option value="Online">Online</option>
+    <option value="Normal">Offline</option>
+    
+    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Age And BirthDate-->
+        <div class="parent-div">
+            <div class="input-container">
+                <div class="input-div">
+                    <label>Address</label>
+                    <input type="text" id="address" class="form-control" placeholder="Enter Address">
+                </div>
+                <div class="input-div">
+                    <label>BirthDate<span class="required">*</span></label>
+                    <input type="date" id="birthDate" class="form-control" placeholder="BirthDate">  <!-- Corrected ID -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Email and Phone Number -->
+        <div class="date-div">
+            <div class="input-container">
+                <div class="input-div">
+                    <label>Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="Email" >
+                </div>
+                <div class="input-div">
+                    <label>Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="phone" class="form-control" placeholder="Phone Number" maxlength="10" required>
+                </div>
+            </div>
+        </div>
+
+        
+        
+
+        <!-- Referred by and Referred Person Name -->
+        
+
+        
+
+        <!-- Status and Interest -->
+        <div class="status-div" hidden>
+            <div class="input-container">
+                <div class="input-div2">
+                    <label>Status <span class="required">*</span></label>
+                    <input type="text" id="status" value="Joined" readonly>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Save Button -->
+        <div class="submit-div">
+            <button class="btn" id="submitButton" onclick="saveClientData()">Submit</button>
+        </div>
+    </div>
+</body>
+</html>
