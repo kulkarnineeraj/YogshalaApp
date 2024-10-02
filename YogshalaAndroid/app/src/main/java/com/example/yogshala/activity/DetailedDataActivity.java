@@ -154,8 +154,14 @@ public class DetailedDataActivity extends AppCompatActivity {
 
                     // Pass all data needed to edit the client
                     intent.putExtra("id", getIntent().getStringExtra("clientId")); // Pass the client ID
-                    intent.putExtra("fname", getIntent().getStringExtra("name").split(" ")[0]); // First name
-                    intent.putExtra("lname", getIntent().getStringExtra("name").split(" ")[1]); // Last name
+                    String[] nameParts = getIntent().getStringExtra("name").split(" ");
+                    if (nameParts.length > 1) {
+                        intent.putExtra("fname", nameParts[0]); // First name
+                        intent.putExtra("lname", nameParts[1]); // Last name
+                    } else {
+                        intent.putExtra("fname", nameParts[0]); // First name
+                        intent.putExtra("lname", "");           // Handle case where there's no last name
+                    }
                     intent.putExtra("enquiryDate", getIntent().getStringExtra("enquiryDate"));
                     intent.putExtra("program", getIntent().getStringExtra("program"));
                     intent.putExtra("status", getIntent().getStringExtra("status"));

@@ -23,7 +23,7 @@ body {
 }
 
 .name-div, .date-div, .contact-div, .address-div, .program-div, .referred-div, .parent-div, .status-div, .title-div {
-    background: rgba(255, 255, 255, 0.7); /* Slightly transparent */
+    background: rgba(225, 245, 254, 0.7); /* Slightly transparent */
     backdrop-filter: blur(10px); /* Blurred background */
     margin: 15px 0;
     border-radius: 15px;

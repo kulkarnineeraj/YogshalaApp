@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         CL5.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AddTransactionActivity.class)));
 
         CL6 = findViewById(R.id.CL6);
-        CL6.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, FeesDueActivity.class)));
+        CL6.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, IncomeReportActivity.class)));
 
         totalTV = findViewById(R.id.totalTV);
 
